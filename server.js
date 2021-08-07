@@ -2,9 +2,6 @@ const express = require('express');
 const db = require('./db/connection');
 const apiRoutes = require('./routes/apiRoutes');
 
-// const mysql = require('mysql2');
-// const inputCheck = require('./utils/inputCheck');
-
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -14,7 +11,6 @@ app.use(express.json());
 
 // Use apiRoutes
 app.use('/api', apiRoutes);
-
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
@@ -30,6 +26,3 @@ db.connect(err => {
   });
 });
 
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
